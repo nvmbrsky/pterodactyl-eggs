@@ -47,9 +47,11 @@ skip-external-locking
 #
 # * Fine Tuning
 #
-max_connections		= 100
+# max_connections		= 100
+max_connections		= 300
 connect_timeout		= 5
-wait_timeout		= 600
+# wait_timeout		= 600
+wait_timeout		= 28800
 max_allowed_packet	= 16M
 thread_cache_size       = 128
 sort_buffer_size	= 4M
@@ -187,3 +189,11 @@ key_buffer		= 16M
 #
 !include /etc/mysql/mariadb.cnf
 !includedir /etc/mysql/conf.d/
+
+[mysql]
+default-character-set = utf8mb4
+
+[mysqld]
+collation-server = utf8mb4_general_ci
+character-set-server = utf8mb4
+default-time-zone = '+08:00'
